@@ -5,12 +5,19 @@ package tw.ccc99.bpandsvc;
  */
 
 import java.util.*;
+
 public class CommandLineView {
 
     private RentABike rentABike;
 
-    public CommandLineView() {
-        rentABike = new RentABike("Bruce's Bikes");
+    public CommandLineView() {}
+
+    public void setRentABike(RentABike rentABike) {
+        this.rentABike = rentABike;
+    }
+
+    public RentABike getRentABike() {
+        return rentABike;
     }
 
     public void printAllBikes() {
@@ -20,11 +27,6 @@ public class CommandLineView {
             Bike bike = iter.next();
             System.out.println(bike.toString());
         }
-    }
-
-    public static final void main(String[] args) {
-        CommandLineView clv = new CommandLineView();
-        clv.printAllBikes();
     }
 }
 
